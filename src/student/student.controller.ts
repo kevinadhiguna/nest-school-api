@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Put } from '@nestjs/common';
 
 @Controller('students') // <- Tell NestJS that the class below is a controller.
 export class StudentController {
@@ -17,5 +17,11 @@ export class StudentController {
   @Post() 
   createStudent() {
     return "Create a Student";
+  }
+
+  // Handle PUT requests
+  @Put('/:studentId') 
+  updateStudent() {
+    return "Update a Student by ID";
   }
 }
