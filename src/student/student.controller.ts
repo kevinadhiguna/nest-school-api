@@ -4,6 +4,11 @@ import { Controller, Get } from '@nestjs/common';
 export class StudentController {
   @Get()
   getStudents() {
-    return "Hello from GET students!";
+    return "All students!";
+  }
+
+  @Get('/:studentId') // <- Append to URL, therefore it will be : '/students/:studentId'
+  getStudentById() {
+    return "Get a student by ID";
   }
 }
