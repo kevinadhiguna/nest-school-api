@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put } from '@nestjs/common';
+import { Controller, Get, Post, Put, Param } from '@nestjs/common';
 
 @Controller('students') // <- Tell NestJS that the class below is a controller.
 export class StudentController {
@@ -9,7 +9,9 @@ export class StudentController {
   }
 
   @Get('/:studentId') // <- Append to URL, therefore it will be : '/students/:studentId'
-  getStudentById() {
+  getStudentById(
+    @Param() params: { studentId: string }
+  ) {
     return "Get a student by ID";
   }
 
