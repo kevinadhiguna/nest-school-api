@@ -10,9 +10,10 @@ export class StudentController {
 
   @Get('/:studentId') // <- Append to URL, therefore it will be : '/students/:studentId'
   getStudentById(
-    @Param() params: { studentId: string }
+    @Param('studentId') studentId: string
   ) {
-    return "Get a student by ID";
+    console.log("Student ID:", studentId);
+    return `Get a Student with ID of ${studentId}`;
   }
 
   // Handle POST requests
