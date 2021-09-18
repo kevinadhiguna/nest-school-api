@@ -5,6 +5,6 @@ import { TeacherController } from '../teacher/teacher.controller';
 
 @Module({
   imports: [],
-  controllers: [ StudentController, StudentTeacherController, TeacherController ],
+  controllers: [StudentController, StudentTeacherController, TeacherController],
 })
 export class AppModule {}

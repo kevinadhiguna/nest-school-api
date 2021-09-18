@@ -5,33 +5,28 @@ export class StudentController {
   // Handle GET requests
   @Get()
   getStudents() {
-    return "All students!";
+    return 'All students!';
   }
 
   @Get('/:studentId') // <- Append to URL, therefore it will be : '/students/:studentId'
-  getStudentById(
-    @Param('studentId') studentId: string
-  ) {
-    console.log("Student ID:", studentId);
+  getStudentById(@Param('studentId') studentId: string) {
+    console.log('Student ID:', studentId);
     return `Get a Student with ID of ${studentId}`;
   }
 
   // Handle POST requests
-  @Post() 
-  createStudent(
-    @Body() body
-  ) {
-    console.log("Body:", body);
-    // Convert a JSON object to a string 
+  @Post()
+  createStudent(@Body() body) {
+    console.log('Body:', body);
+    // Convert a JSON object to a string
     return `Create a Student with the following data ${JSON.stringify(body)}`;
   }
 
   // Handle PUT requests
-  @Put('/:studentId') 
-  updateStudent(
-    @Param('studentId') studentId: string,
-    @Body() body,
-  ) {
-    return `Update a Student with ID of ${studentId} with data of ${JSON.stringify(body)}`;
+  @Put('/:studentId')
+  updateStudent(@Param('studentId') studentId: string, @Body() body) {
+    return `Update a Student with ID of ${studentId} with data of ${JSON.stringify(
+      body,
+    )}`;
   }
 }

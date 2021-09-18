@@ -5,13 +5,11 @@ export class TeacherController {
   // Handle GET requests
   @Get()
   getTeachers() {
-    return "All Teachers";
+    return 'All Teachers';
   }
 
   @Get('/:teacherId') // <- Append to URL, therefore it will be : '/teachers/:teacherId'
-  getTeacherById(
-    @Param('teacherId') teacherId: string
-  ) {
+  getTeacherById(@Param('teacherId') teacherId: string) {
     return `Get a Teacher with ID of ${teacherId}`;
   }
 }
