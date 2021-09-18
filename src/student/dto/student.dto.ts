@@ -3,6 +3,13 @@ export class FindStudentResponseDto {
   studentName: string;
   teacherName: string;
 }
+
+export class StudentResponseDto {
+  id: string;
+  studentName: string;
+  teacherName: string;
+}
+
 export class CreateStudentDto {
   studentName: string;
   teacherName: string;
