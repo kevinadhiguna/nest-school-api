@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Param } from '@nestjs/common';
+import { Controller, Get, Post, Put, Param, Body } from '@nestjs/common';
 
 @Controller('students') // <- Tell NestJS that the class below is a controller.
 export class StudentController {
@@ -18,8 +18,12 @@ export class StudentController {
 
   // Handle POST requests
   @Post() 
-  createStudent() {
-    return "Create a Student";
+  createStudent(
+    @Body() body
+  ) {
+    console.log("Body:", body);
+    // Convert a JSON object to a string 
+    return `Create a Student with the following data ${JSON.stringify(body)}`;
   }
 
   // Handle PUT requests
