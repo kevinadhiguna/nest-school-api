@@ -28,7 +28,10 @@ export class StudentController {
 
   // Handle PUT requests
   @Put('/:studentId') 
-  updateStudent() {
-    return "Update a Student by ID";
+  updateStudent(
+    @Param('studentId') studentId: string,
+    @Body() body,
+  ) {
+    return `Update a Student with ID of ${studentId} with data of ${JSON.stringify(body)}`;
   }
 }
