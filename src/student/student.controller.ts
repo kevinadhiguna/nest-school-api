@@ -30,8 +30,7 @@ export class StudentController {
   @Post()
   createStudent(@Body() body: CreateStudentDto): StudentResponseDto {
     console.log('Body:', body);
-    // Convert a JSON object to a string
-    return `Create a Student with the following data ${JSON.stringify(body)}`;
+    return this.studentService.createStudent(body);
   }
 
   // Handle PUT requests
