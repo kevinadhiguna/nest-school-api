@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Put, Param, Body, ParseUUIDPipe } from '@nestjs/common';
 
 import {
   FindStudentResponseDto,
@@ -20,7 +20,7 @@ export class StudentController {
 
   @Get('/:studentId') // <- Append to URL, therefore it will be : '/students/:studentId'
   getStudentById(
-    @Param('studentId') studentId: string,
+    @Param('studentId', new ParseUUIDPipe()) studentId: string,
   ): FindStudentResponseDto {
     console.log('Student ID:', studentId);
     return this.studentService.getStudentById(studentId);
@@ -36,7 +36,7 @@ export class StudentController {
   // Handle PUT requests
   @Put('/:studentId')
   updateStudent(
-    @Param('studentId') studentId: string,
+    @Param('studentId', new ParseUUIDPipe()) studentId: string,
     @Body() body: UpdateStudentDto,
   ): StudentResponseDto {
     return this.studentService.updateStudent(body, studentId);
