@@ -17,6 +17,6 @@ export class TeacherController {
   getTeacherById(
     @Param('teacherId') teacherId: string,
   ): FindTeacherResponseDto {
-    return `Get a Teacher with ID of ${teacherId}`;
+    return this.teacherService.getTeacherById(teacherId);
   }
 }
