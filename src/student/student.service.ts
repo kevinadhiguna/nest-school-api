@@ -44,6 +44,7 @@ export class StudentService {
           id: studentId,
           ...payload,
         };
+        return updatedStudent;
       } else {
         return student;
       }
