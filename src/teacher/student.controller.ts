@@ -12,7 +12,7 @@ export class StudentTeacherController {
 
   @Get()
   getStudents(@Param('teacherId') teacherId: string): FindStudentResponseDto[] {
-    return `Get Students that belong to a Teacher with ID ${teacherId}`;
+    return this.studentService.getStudentsByTeacherId(teacherId);
   }
 
   // Handle PUT requests
