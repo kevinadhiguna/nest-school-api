@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { FindTeacherResponseDto } from 'src/teacher/dto/teacher.dto';
 import { v4 as uuid } from 'uuid';
 
 import { students } from './db';
@@ -46,5 +47,11 @@ export class StudentService {
     this.students = updatedStudentList;
     
     return updatedStudent;
+  }
+
+  getStudentsByTeacherId(teacherId: string): FindStudentResponseDto[] {
+    return this.students.filter(student => {
+      return student.teacherId;
+    })
   }
 }
