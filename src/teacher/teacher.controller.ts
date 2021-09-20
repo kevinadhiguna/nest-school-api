@@ -5,8 +5,8 @@ import { TeacherService } from './teacher.service';
 
 @Controller('teachers')
 export class TeacherController {
-  constructor (private readonly teacherService: TeacherService) {}
-  
+  constructor(private readonly teacherService: TeacherService) {}
+
   // Handle GET requests
   @Get()
   getTeachers(): FindTeacherResponseDto[] {

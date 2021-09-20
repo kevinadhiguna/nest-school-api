@@ -3,7 +3,12 @@ import { FindTeacherResponseDto } from 'src/teacher/dto/teacher.dto';
 import { v4 as uuid } from 'uuid';
 
 import { students } from './db';
-import { CreateStudentDto, FindStudentResponseDto, StudentResponseDto, UpdateStudentDto } from './dto/student.dto';
+import {
+  CreateStudentDto,
+  FindStudentResponseDto,
+  StudentResponseDto,
+  UpdateStudentDto,
+} from './dto/student.dto';
 
 @Injectable()
 export class StudentService {
@@ -14,7 +19,7 @@ export class StudentService {
   }
 
   getStudentById(studentId: string): FindStudentResponseDto {
-    return this.students.find(student => {
+    return this.students.find((student) => {
       return student.id === studentId;
     });
   }
@@ -32,12 +37,12 @@ export class StudentService {
   updateStudent(payload: UpdateStudentDto, studentId: string) {
     let updatedStudent: StudentResponseDto;
 
-    // Create a new array which will be saved in db.ts 
-    const updatedStudentList = this.students.map(student => {
+    // Create a new array which will be saved in db.ts
+    const updatedStudentList = this.students.map((student) => {
       if (student.id === studentId) {
         updatedStudent = {
           id: studentId,
-          ...payload
+          ...payload,
         };
       } else {
         return student;
@@ -45,12 +50,12 @@ export class StudentService {
     });
     // Define that students actually refers to the updatedStudentList
     this.students = updatedStudentList;
-    
+
     return updatedStudent;
   }
 
   getStudentsByTeacherId(teacherId: string): FindStudentResponseDto[] {
-    return this.students.filter(student => {
+    return this.students.filter((student) => {
       return student.teacherId;
     });
   }
@@ -58,11 +63,11 @@ export class StudentService {
   updateStudentTeacher(teacherId: string, studentId: string) {
     let updatedStudent: StudentResponseDto;
 
-    let updatedStudentList = this.students.map(student => {
+    let updatedStudentList = this.students.map((student) => {
       if (student.id === studentId) {
         updatedStudent = {
           ...student,
-          teacherId: teacherId
+          teacherId: teacherId,
         };
         return updatedStudent;
       } else {
