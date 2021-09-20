@@ -23,7 +23,7 @@ export class StudentController {
     @Param('studentId') studentId: string,
   ): FindStudentResponseDto {
     console.log('Student ID:', studentId);
-    return `Get a Student with ID of ${studentId}`;
+    return this.studentService.getStudentById(studentId);
   }
 
   // Handle POST requests
