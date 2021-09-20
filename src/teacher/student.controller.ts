@@ -11,7 +11,9 @@ export class StudentTeacherController {
   constructor(private readonly studentService: StudentService) {}
 
   @Get()
-  getStudents(@Param('teacherId', new ParseUUIDPipe()) teacherId: string): FindStudentResponseDto[] {
+  getStudents(
+    @Param('teacherId', new ParseUUIDPipe()) teacherId: string,
+  ): FindStudentResponseDto[] {
     return this.studentService.getStudentsByTeacherId(teacherId);
   }
 

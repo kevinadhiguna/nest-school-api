@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Put, Param, Body, ParseUUIDPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Param,
+  Body,
+  ParseUUIDPipe,
+} from '@nestjs/common';
 
 import {
   FindStudentResponseDto,
