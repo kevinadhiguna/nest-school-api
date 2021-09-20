@@ -1,21 +1,21 @@
 export class FindStudentResponseDto {
   id: string;
   studentName: string;
-  teacherName: string;
+  teacherId: string;
 }
 
 export class StudentResponseDto {
   id: string;
   studentName: string;
-  teacherName: string;
+  teacherId: string;
 }
 
 export class CreateStudentDto {
   studentName: string;
-  teacherName: string;
+  teacherId: string;
 }
 
 export class UpdateStudentDto {
   studentName: string;
-  teacherName: string;
+  teacherId: string;
 }
