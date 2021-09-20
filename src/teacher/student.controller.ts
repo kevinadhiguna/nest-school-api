@@ -21,6 +21,6 @@ export class StudentTeacherController {
     @Param('teacherId') teacherId: string,
     @Param('studentId') studentId: string,
   ): StudentResponseDto {
-    return `Update a Student with ID of ${studentId} to a Teacher with ID of ${teacherId}`;
+    return this.studentService.updateStudentTeacher(teacherId, studentId);
   }
 }
