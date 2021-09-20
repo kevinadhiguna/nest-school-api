@@ -57,7 +57,7 @@ export class StudentService {
 
   getStudentsByTeacherId(teacherId: string): FindStudentResponseDto[] {
     return this.students.filter((student) => {
-      return student.teacherId;
+      return student.teacherId === teacherId;
     });
   }
 
