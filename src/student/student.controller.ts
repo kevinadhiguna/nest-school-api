@@ -15,7 +15,7 @@ export class StudentController {
   // Handle GET requests
   @Get()
   getStudents(): FindStudentResponseDto[] {
-    return 'All students!';
+    return this.studentService.getStudents();
   }
 
   @Get('/:studentId') // <- Append to URL, therefore it will be : '/students/:studentId'
