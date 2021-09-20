@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { v4 as uuid } from 'uuid';
 
 import { students } from './db';
-import { CreateStudentDto, FindStudentResponseDto, StudentResponseDto } from './dto/student.dto';
+import { CreateStudentDto, FindStudentResponseDto, StudentResponseDto, UpdateStudentDto } from './dto/student.dto';
 
 @Injectable()
 export class StudentService {
@@ -26,5 +26,25 @@ export class StudentService {
     // Add 'newStudent' to database (using push method to add it to an object)
     this.students.push(newStudent);
     return newStudent;
+  }
+
+  updateStudent(payload: UpdateStudentDto, studentId: string) {
+    let updatedStudent: StudentResponseDto;
+
+    // Create a new array which will be saved in db.ts 
+    const updatedStudentList = this.students.map(student => {
+      if (student.id === studentId) {
+        updatedStudent = {
+          id: studentId,
+          ...payload
+        };
+      } else {
+        return student;
+      }
+    });
+    // Define that students actually refers to the updatedStudentList
+    this.students = updatedStudentList;
+    
+    return updatedStudent;
   }
 }
