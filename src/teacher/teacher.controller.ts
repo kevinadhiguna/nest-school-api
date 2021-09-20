@@ -10,7 +10,7 @@ export class TeacherController {
   // Handle GET requests
   @Get()
   getTeachers(): FindTeacherResponseDto[] {
-    return 'All Teachers';
+    return this.teacherService.getTeachers();
   }
 
   @Get('/:teacherId') // <- Append to URL, therefore it will be : '/teachers/:teacherId'
