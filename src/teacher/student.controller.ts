@@ -1,6 +1,9 @@
 import { Controller, Get, Param, Put } from '@nestjs/common';
 
-import { FindStudentResponseDto, StudentResponseDto } from '../student/dto/student.dto';
+import {
+  FindStudentResponseDto,
+  StudentResponseDto,
+} from '../student/dto/student.dto';
 
 @Controller('/teachers/:teacherId/students')
 export class StudentTeacherController {
