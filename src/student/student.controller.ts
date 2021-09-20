@@ -6,9 +6,12 @@ import {
   UpdateStudentDto,
   StudentResponseDto,
 } from './dto/student.dto';
+import { StudentService } from './student.service';
 
 @Controller('students') // <- Tell NestJS that the class below is a controller.
 export class StudentController {
+  constructor(private readonly studentService: StudentService) {}
+
   // Handle GET requests
   @Get()
   getStudents(): FindStudentResponseDto[] {
