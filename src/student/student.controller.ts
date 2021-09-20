@@ -39,8 +39,6 @@ export class StudentController {
     @Param('studentId') studentId: string,
     @Body() body: UpdateStudentDto,
   ): StudentResponseDto {
-    return `Update a Student with ID of ${studentId} with data of ${JSON.stringify(
-      body,
-    )}`;
+    return this.studentService.updateStudent(body, studentId);
   }
 }
