@@ -8,7 +8,7 @@ async function bootstrap() {
   try {
     await app.listen(port);
     console.log(
-      `NestJS School API has been launched at http://localhost:${port} !`,
+      `NestJS School API has been launched at port ${port} !`,
     );
   } catch (err) {
     console.log('An error occurred :', err);
