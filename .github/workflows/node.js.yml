@@ -27,5 +27,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: rm -rf node_modules && yarn install --frozen-lockfile # <- An alternative for 'npm ci'
-    - run: yarn build --if-present
+    - run: yarn build # <- DO NOT replace this with 'yarn build --if-present' as the '--if-present' parameter is not recognized 
     - run: yarn test
