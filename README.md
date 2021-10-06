@@ -13,6 +13,23 @@
 
 A school API powered by [NestJS](https://github.com/nestjs/nest) and TypeScript.
 
+<br/>
+
+## Before running the app
+
+1) Fill in the `.env`
+
+Please configure environment variables in the `.env` file. What you should set is port.
+
+If you would like to serve the app at port 5000 (http://localhost:5000), then you should fill :
+```
+PORT=5000
+```
+
+2) Install [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/), **only** if you want to run the app with docker-related stuff.
+
+<br/>
+
 ## How to run using Yarn
 
 1) Install dependencies :
