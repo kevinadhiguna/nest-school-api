@@ -15,6 +15,6 @@ RUN yarn --frozen-lockfile
 COPY . .
 
 # Port Binding (expose service via port, instead relying on a web server container such as Apache)
-EXPOSE 3000
+EXPOSE 5000
 
 CMD ["yarn", "start"]
