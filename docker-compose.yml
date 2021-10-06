@@ -4,7 +4,5 @@ services:
   nestjs-school-api:
     container_name: nestjs_school_api
     build: .
-    environment: 
-      - PORT: ${PORT}
     ports:
-      - 3000:3000
+      - 5000:${PORT}
