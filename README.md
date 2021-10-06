@@ -45,6 +45,12 @@ $ yarn start
 The API will be running on `http://localhost:5000`.
 
 <br/>
+
+>"How to stop the app ?"
+
+Simply, `ctrl + c` will terminate and stop the app process.
+
+<br/>
 <hr/>
 
 ## How to run using Docker
@@ -67,6 +73,12 @@ $ docker run -it -p 5000:5000 -d nestjs-school-api:latest
 The API will be running on `http://localhost:5000`.
 
 <br/>
+
+>"How to stop the app ?"
+
+Simply, `ctrl + c` will terminate and stop the app process.
+
+<br/>
 <hr/>
 
 ## How to run using Docker-compose :
@@ -82,6 +94,12 @@ $ docker-compose up -d
 ```
 
 The API will be running on `http://localhost:5000`.
+
+<br/>
+
+>"I executed it with docker-compose up, how to stop it ?"
+
+Simply, `ctrl + c` will terminate and stop the app process. On the other hand, `docker-compose stop` and `docker-compose down` will stop the app process, if you run with `docker-compose up -d`. Please read notes below for details.
 
 <br/>
 
@@ -103,6 +121,10 @@ at once, this is the command :
 ```bash
 $ docker-compose down
 ```
+
+<br/>
+
+Thanks for visiting, have a nice day !
 
 <br/>
 
