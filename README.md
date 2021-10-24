@@ -70,6 +70,9 @@ or if you want to run in detached mode :
 $ docker run -it -p 5000:5000 -d nestjs-school-api:latest
 ```
 
+**important note:**
+- Please run it using `docker run -it` to enable stopping the docker container using `ctrl + c`.
+
 The API will be running on `http://localhost:5000`.
 
 <br/>
