@@ -102,7 +102,7 @@ The API will be running on `http://localhost:5000`.
 
 >"I executed it with docker-compose up, how to stop it ?"
 
-Simply, `ctrl + c` will terminate and stop the app process. On the other hand, `docker-compose stop` and `docker-compose down` will stop the app process, if you run with `docker-compose up -d`. Please read notes below for details.
+Simply, `ctrl + c` will terminate and stop the app process. On the other hand, `docker-compose stop` and `docker-compose down` will stop the app process. The difference is that `docker-compose down` will stop and remove the docker container, docker volume (if any), and docker network. If you run with `docker-compose up -d`. Please read notes below for details.
 
 <br/>
 
