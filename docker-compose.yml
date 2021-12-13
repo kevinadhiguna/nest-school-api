@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: nestjs_school_api
+    container_name: nestjs_school_api_ctr
     environment:
       PORT: ${PORT}
     ports:
