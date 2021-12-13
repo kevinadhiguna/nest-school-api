@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   nestjs-school-api:
-    container_name: nestjs_school_api
     build: .
+    container_name: nestjs_school_api
+    environment:
+      PORT: ${PORT}
     ports:
       - 5000:${PORT}
