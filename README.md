@@ -62,12 +62,12 @@ $ docker build -t nestjs-school-api:latest .
 
 2) Run the docker image :
 ```bash
-$ docker run -it -p 5000:5000 nestjs-school-api:latest
+$ docker run -it --rm -p 5000:5000 nestjs-school-api:latest
 ```
 
 or if you want to run in detached mode :
 ```bash
-$ docker run -it -p 5000:5000 -d nestjs-school-api:latest
+$ docker run -it --rm -p 5000:5000 -d nestjs-school-api:latest
 ```
 
 **important note:**
