@@ -3,6 +3,8 @@ FROM node@sha256:a9b9cb880fa429b0bea899cd3b1bc081ab7277cc97e6d2dcd84bd9753b2027e
 # The command above is an alternative of :
 # FROM node:16-alpine
 
+MAINTAINER kevin
+
 # Create app as a working directory
 WORKDIR /app
 
