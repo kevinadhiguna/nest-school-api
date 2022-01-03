@@ -5,69 +5,130 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+<p align="center">
+  A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## About this project
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A school API powered by [NestJS](https://github.com/nestjs/nest) and TypeScript.
 
-## Installation
+<br/>
 
-```bash
-$ npm install
+## Before running the app
+
+1) Fill in the `.env`
+
+Please configure environment variables in the `.env` file. What you should set is port.
+
+If you would like to serve the app at port 5000 (http://localhost:5000), then you should fill :
+```
+PORT=5000
 ```
 
-## Running the app
+2) Install [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/), **only** if you want to run the app with docker-related stuff.
 
+<br/>
+
+## How to run using Yarn
+
+1) Install dependencies :
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+$ yarn
 ```
 
-## Test
-
+2) Start the app :
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ yarn start
 ```
 
-## Support
+The API will be running on `http://localhost:5000`.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+<br/>
 
-## Stay in touch
+>"How to stop the app ?"
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Simply, `ctrl + c` will terminate and stop the app process.
 
-## License
+<br/>
+<hr/>
 
-Nest is [MIT licensed](LICENSE).
+## How to run using Docker
+
+1) Build the docker image :
+```bash
+$ docker build -t nestjs-school-api:latest .
+```
+
+2) Run the docker image :
+```bash
+$ docker run -it --rm -p 5000:5000 nestjs-school-api:latest
+```
+
+or if you want to run in detached mode :
+```bash
+$ docker run -it --rm -p 5000:5000 -d nestjs-school-api:latest
+```
+
+**important note:**
+- Please run it using `docker run -it` to enable stopping the docker container using `ctrl + c`.
+
+The API will be running on `http://localhost:5000`.
+
+<br/>
+
+>"How to stop the app ?"
+
+Simply, `ctrl + c` will terminate and stop the app process.
+
+<br/>
+<hr/>
+
+## How to run using Docker-compose :
+
+1) Execute :
+```bash
+$ docker-compose up
+```
+
+or if you want to run in detached mode :
+```bash
+$ docker-compose up -d
+```
+
+The API will be running on `http://localhost:5000`.
+
+<br/>
+
+>"I executed it with docker-compose up, how to stop it ?"
+
+Simply, `ctrl + c` will terminate and stop the app process. On the other hand, `docker-compose stop` and `docker-compose down` will stop the app process. The difference is that `docker-compose down` will stop and remove the docker container, docker volume (if any), and docker network. If you run with `docker-compose up -d`. Please read notes below for details.
+
+<br/>
+
+**Note :**
+docker-compose will build the docker image automatically if it does not exist. Then the docker image is run as a docker container.
+
+You can stop the the docker container process with command :
+```bash
+$ docker-compose stop
+```
+
+However, if you want to :
+- Stop the docker container process
+- Remove the docker container
+- Remove the docker network created by the `docker-compose.yml`
+
+at once, this is the command :
+
+```bash
+$ docker-compose down
+```
+
+<br/>
+
+Thanks for visiting, have a nice day !
+
+<br/>
+
+[![Visits Badge](https://badges.pufler.dev/visits/kevinadhiguna/nest-school-api)](https://github.com/kevinadhiguna)

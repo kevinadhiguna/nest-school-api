@@ -1,7 +1,30 @@
+### Dependency ###
 node_modules
+
+### ESLint ###
 .eslintrc.js
+
+### Git ###
 .gitignore
+
+### Testing ###
 test/
+
+### Production build folder ###
 dist/
+
+### Prettier ###
 .prettierrc
+
+### Documentation & Markdown ###
 README.md
+*.md
+
+### GitHub/GitLab (mainly workflow, CI/CD) ###
+.github
+.gitlab-ci.yml
+.gitlab-ci.yaml
+
+### docker-compose ###
+docker-compose.yml
+docker-compose.yaml
