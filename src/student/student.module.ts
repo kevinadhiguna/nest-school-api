@@ -1,4 +1,9 @@
-import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
+import {
+  MiddlewareConsumer,
+  Module,
+  NestModule,
+  RequestMethod,
+} from '@nestjs/common';
 import { ValidStudentMiddleware } from '../common/middleware/validStudent.middleware';
 
 import { StudentController } from './student.controller';
@@ -9,17 +14,16 @@ import { StudentService } from './student.service';
   providers: [StudentService],
   exports: [StudentService],
 })
-export class StudentModule implements NestModule {  
+export class StudentModule implements NestModule {
   // Implementing NestModule allows us to set additional configuration ('configure' function)
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(ValidStudentMiddleware).forRoutes({
       path: 'students/:studentId',
-      method: RequestMethod.GET
+      method: RequestMethod.GET,
     });
     consumer.apply(ValidStudentMiddleware).forRoutes({
       path: 'students/:studentId',
-      method: RequestMethod.PUT
+      method: RequestMethod.PUT,
     });
   }
-  
 }
