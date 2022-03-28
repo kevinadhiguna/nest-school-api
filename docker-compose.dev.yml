@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: dev.Dockerfile
+    image: nestjs-school-api_img
     container_name: nestjs-school-api_ctr
     ports:
       - 5000:5000
