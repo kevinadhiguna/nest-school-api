@@ -12,7 +12,11 @@ COPY yarn.lock .
 RUN yarn --frozen-lockfile
 
 # Bundle app source
-COPY . .
+COPY src/main.ts src/main.ts
+COPY src/app/ src/app/
+COPY src/common/ src/common/
+COPY src/student/ src/student/
+COPY src/teacher/ src/teacher/
 
 # Port Binding (expose service via port, instead relying on a web server container such as Apache)
 EXPOSE 5000
