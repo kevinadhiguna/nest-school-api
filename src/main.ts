@@ -3,7 +3,7 @@ import { AppModule } from './app/app.module';
 
 require('dotenv').config();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 const HOSTNAME = process.env.HOSTNAME;
 
 async function bootstrap() {
