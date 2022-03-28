@@ -4,7 +4,7 @@ import { AppModule } from './app/app.module';
 require('dotenv').config();
 
 const PORT = process.env.PORT || 5000;
-const HOSTNAME = process.env.HOSTNAME;
+const HOSTNAME = process.env.HOSTNAME || "localhost";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
