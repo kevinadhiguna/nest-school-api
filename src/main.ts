@@ -9,9 +9,9 @@ const HOSTNAME = process.env.HOSTNAME;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   try {
-    await app.listen(PORT);
+    await app.listen(PORT, HOSTNAME);
     console.log(
-      `NestJS School API has been launched at http://localhost:${PORT} !`,
+      `NestJS School API has been launched at ${HOSTNAME}:${PORT} !`,
     );
   } catch (err) {
     console.log('An error occurred :', err);
