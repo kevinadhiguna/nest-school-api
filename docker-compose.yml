@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  nestjs-school-api_stg:
+    build:
+      context: .
+      dockerfile: stg.Dockerfile
+    image: nestjs-school-api_stg-img
+    container_name: nestjs-school-api_stg-ctr
+    environment:
+      # Set default port to 5000 and hostname to localhost if they're unset or empty.
+      PORT: ${PORT:-5000}
+      HOSTNAME: ${HOSTNAME:-localhost}
+    ports:
+      - 5000:5000
