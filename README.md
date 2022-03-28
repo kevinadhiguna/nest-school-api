@@ -62,13 +62,16 @@ $ docker build -t nestjs-school-api:latest .
 
 2) Run the docker image :
 ```bash
-$ docker run -it -p 5000:5000 nestjs-school-api:latest
+$ docker run -it --rm -p 5000:5000 nestjs-school-api:latest
 ```
 
 or if you want to run in detached mode :
 ```bash
-$ docker run -it -p 5000:5000 -d nestjs-school-api:latest
+$ docker run -it --rm -p 5000:5000 -d nestjs-school-api:latest
 ```
+
+**important note:**
+- Please run it using `docker run -it` to enable stopping the docker container using `ctrl + c`.
 
 The API will be running on `http://localhost:5000`.
 
@@ -99,7 +102,7 @@ The API will be running on `http://localhost:5000`.
 
 >"I executed it with docker-compose up, how to stop it ?"
 
-Simply, `ctrl + c` will terminate and stop the app process. On the other hand, `docker-compose stop` and `docker-compose down` will stop the app process, if you run with `docker-compose up -d`. Please read notes below for details.
+Simply, `ctrl + c` will terminate and stop the app process. On the other hand, `docker-compose stop` and `docker-compose down` will stop the app process. The difference is that `docker-compose down` will stop and remove the docker container, docker volume (if any), and docker network. If you run with `docker-compose up -d`. Please read notes below for details.
 
 <br/>
 
