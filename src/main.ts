@@ -3,14 +3,14 @@ import { AppModule } from './app/app.module';
 
 require('dotenv').config();
 
-const port = process.env.PORT;
+const PORT = process.env.PORT;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   try {
-    await app.listen(port);
+    await app.listen(PORT);
     console.log(
-      `NestJS School API has been launched at http://localhost:${port} !`,
+      `NestJS School API has been launched at http://localhost:${PORT} !`,
     );
   } catch (err) {
     console.log('An error occurred :', err);
