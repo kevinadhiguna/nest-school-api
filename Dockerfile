@@ -21,4 +21,4 @@ COPY src/teacher/ src/teacher/
 # Port Binding (expose service via port, instead relying on a web server container such as Apache)
 EXPOSE 5000
 
-CMD ["yarn", "start"]
+CMD [ "yarn", "start:dev" ]
