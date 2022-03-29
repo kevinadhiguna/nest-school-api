@@ -50,7 +50,9 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/nestjs-school-api:latest
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/nestjs-school-api:stg-${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/nestjs-school-api:stg-latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
