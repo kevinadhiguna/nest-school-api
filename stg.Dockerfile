@@ -12,6 +12,7 @@ WORKDIR /app
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install --frozen-lockfile
+COPY . .
 COPY --from=builder /builder-app/dist /app/dist
 EXPOSE 5000
 CMD [ "yarn", "start" ]
