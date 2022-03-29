@@ -11,8 +11,8 @@ async function bootstrap() {
   try {
     await app.listen(PORT, HOSTNAME);
     console.log(`NestJS School API has been launched at ${HOSTNAME}:${PORT} !`);
-  } catch (err) {
-    console.log('An error occurred :', err);
+  } catch (errBootstrap) {
+    console.log('An error occurred while starting service :', errBootstrap);
   }
 }
 bootstrap();
