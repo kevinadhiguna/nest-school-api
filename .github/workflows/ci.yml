@@ -1,4 +1,4 @@
-name: CI with GitHub action
+name: CI with GitHub action at staging
 
 on:
   push:
