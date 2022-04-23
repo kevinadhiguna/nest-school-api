@@ -127,6 +127,15 @@ $ docker-compose down
 
 <br/>
 
+## Format code
+
+You can check code format using prettier :
+```
+yarn run check
+```
+
+<br/>
+
 Thanks for visiting, have a nice day !
 
 <br/>
