@@ -42,6 +42,11 @@ $ yarn
 $ yarn start
 ```
 
+or for development :
+```bash
+$ yarn start:dev
+```
+
 The API will be running on `http://localhost:5000`.
 
 <br/>
