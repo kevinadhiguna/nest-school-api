@@ -132,6 +132,20 @@ $ docker-compose down
 
 <br/>
 
+## Source code format using Prettier
+
+Check source code format :
+```bash
+$ yarn run check
+```
+
+Format source code :
+```bash
+$ yarn format
+```
+
+<br />
+
 Thanks for visiting, have a nice day !
 
 <br/>
